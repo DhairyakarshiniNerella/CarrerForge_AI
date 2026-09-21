@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerForge AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="badge">AI-powered job matching</span>
+      <h1>Career<span>Forge</span> AI</h1>
+      <p>Upload your resume and get jobs ranked by how well they fit your skills, with clear skill gaps and tips to improve.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel" aria-label="Search">
+      <label class="dropzone" id="dropzone" for="resumeFile">
+        <input type="file" id="resumeFile" accept=".pdf,.docx">
+        <span class="drop-icon">&#128196;</span>
+        <span class="drop-title" id="dropTitle">Drop your resume here or click to browse</span>
+        <span class="drop-hint">PDF or DOCX</span>
+      </label>
+
+      <div class="fields">
+        <div class="field">
+          <label for="jobTitle">Job title <small>(optional)</small></label>
+          <input type="text" id="jobTitle" placeholder="e.g. data analyst">
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <select id="country">
+            <option value="in">India</option>
+            <option value="us">United States</option>
+            <option value="gb">United Kingdom</option>
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
+            <option value="de">Germany</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="experience">Years of experience</label>
+          <input type="number" id="experience" min="0" max="40" step="0.5" value="0">
+        </div>
+      </div>
+
+      <button id="findBtn" class="primary">
+        <span class="spinner" aria-hidden="true"></span>
+        <span id="btnText">Find my jobs</span>
+      </button>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section id="profile" class="hidden"></section>
+    <section id="results"></section>
+  </main>
+
+  <footer>Built with FastAPI &middot; Adzuna, Jooble &amp; Arbeitnow &middot; AI analysis by Groq</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
